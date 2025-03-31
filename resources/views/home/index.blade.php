@@ -98,12 +98,14 @@ function time_elapsed_string($datetime, $full = false)
 		<div class="row">
 			@foreach($hot_motelroom as $room)
 			<?php
-			$img_thumb = json_decode($room->images, true);
+			$img_thumb = is_array($room->images) ? $room->images : json_decode($room->images, true);
+			$img_thumb = is_array($img_thumb) ? $img_thumb : [];
+			$first_image = !empty($img_thumb) ? $img_thumb[0] : 'default.jpg';
 			?>
 			<div class="room-item-vertical">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="wrap-img-vertical" style="background: url(uploads/images/<?php echo $img_thumb[0]; ?>) center;     background-size: cover;">
+						<div class="wrap-img-vertical" style="background: url(uploads/images/<?php echo $first_image; ?>) center;     background-size: cover;">
 
 							<div class="category">
 								<a href="category/{{ $room->category->id }}">{{ $room->category->name }}</a>
@@ -165,12 +167,14 @@ function time_elapsed_string($datetime, $full = false)
 			<div class="col-md-6">
 
 				<?php
-				$img_thumb = json_decode($room->images, true);
+				$img_thumb = is_array($room->images) ? $room->images : json_decode($room->images, true);
+				$img_thumb = is_array($img_thumb) ? $img_thumb : [];
+				$first_image = !empty($img_thumb) ? $img_thumb[0] : 'default.jpg';
 				?>
 				<div class="room-item-vertical">
 					<div class="row">
 						<div class="col-md-4">
-							<div class="wrap-img-vertical" style="background: url(uploads/images/<?php echo $img_thumb[0]; ?>) center;     background-size: cover;">
+							<div class="wrap-img-vertical" style="background: url(uploads/images/<?php echo $first_image; ?>) center;     background-size: cover;">
 
 								<div class="category">
 									<a href="category/{{ $room->category->id }}">{{ $room->category->name }}</a>
@@ -237,9 +241,21 @@ function time_elapsed_string($datetime, $full = false)
 		<?php
 		$arrmergeLatln = array();
 		foreach ($map_motelroom as $room) {
-			$arrlatlng = json_decode($room->latlng, true);
-			$arrImg = json_decode($room->images, true);
-			$arrmergeLatln[] = ["slug" => $room->slug, "lat" => $arrlatlng[0], "lng" => $arrlatlng[1], "title" => $room->title, "address" => $room->address, "image" => $arrImg[0], "phone" => $room->phone];
+			$arrlatlng = is_array($room->latlng) ? $room->latlng : json_decode($room->latlng, true);
+			$arrlatlng = is_array($arrlatlng) ? $arrlatlng : [0, 0];
+			
+			$arrImg = is_array($room->images) ? $room->images : json_decode($room->images, true);
+			$arrImg = is_array($arrImg) ? $arrImg : ['default.jpg'];
+			
+			$arrmergeLatln[] = [
+				"slug" => $room->slug,
+				"lat" => $arrlatlng[0],
+				"lng" => $arrlatlng[1],
+				"title" => $room->title,
+				"address" => $room->address,
+				"image" => $arrImg[0],
+				"phone" => $room->phone
+			];
 		}
 
 		$js_array = json_encode($arrmergeLatln);

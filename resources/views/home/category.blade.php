@@ -77,12 +77,14 @@ function time_elapsed_string($datetime, $full = false)
 		<div class="col-md-12">
 
 			<?php
-			$img_thumb = json_decode($room->images, true);
+			$img_thumb = is_array($room->images) ? $room->images : json_decode($room->images, true);
+			$img_thumb = is_array($img_thumb) ? $img_thumb : [];
+			$first_image = !empty($img_thumb) ? $img_thumb[0] : 'default.jpg';
 			?>
 			<div class="room-item-vertical">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="wrap-img-vertical" style="background: url(uploads/images/<?php echo $img_thumb[0]; ?>) center;     background-size: cover;">
+						<div class="wrap-img-vertical" style="background: url(uploads/images/<?php echo $first_image; ?>) center;     background-size: cover;">
 
 							<div class="category">
 								<a href="category/{{ $room->category->id }}">{{ $room->category->name }}</a>

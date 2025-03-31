@@ -75,7 +75,8 @@ function time_elapsed_string($datetime, $full = false)
 				</div>
 			</div>
 			<?php
-			$arrimg =  json_decode($motelroom->images, true);
+			$arrimg = is_array($motelroom->images) ? $motelroom->images : json_decode($motelroom->images, true);
+			$arrimg = is_array($arrimg) ? $arrimg : [];
 			?>
 			<center>
 				<!-- Slider Hình Ảnh -->
@@ -139,7 +140,10 @@ function time_elapsed_string($datetime, $full = false)
 					<strong><i class="fas fa-street-view"></i> Diện tích: </strong><span> {{$motelroom->area}} m <sup>2</sup> </span>
 				</p>
 				<!-- Tiện ích -->
-				<?php $arrtienich = json_decode($motelroom->utilities, true); ?>
+				<?php 
+				$arrtienich = is_array($motelroom->utilities) ? $motelroom->utilities : json_decode($motelroom->utilities, true);
+				$arrtienich = is_array($arrtienich) ? $arrtienich : [];
+				?>
 				<div id="km-detail" style="margin-top: 30px;">
 					<div class="fs-dtslt">Tiện ích Phòng Trọ</div>
 					<div style="padding: 5px;">
@@ -195,9 +199,17 @@ function time_elapsed_string($datetime, $full = false)
 		<?php
 		$arrmergeLatln = array();
 
-		$arrlatlng = json_decode($motelroom->latlng, true);
+		$arrlatlng = is_array($motelroom->latlng) ? $motelroom->latlng : json_decode($motelroom->latlng, true);
+		$arrlatlng = is_array($arrlatlng) ? $arrlatlng : [0, 0];
 
-		$arrmergeLatln[] = ["lat" => $arrlatlng[0], "lng" => $arrlatlng[1], "title" => $motelroom->title, "address" => $motelroom->address, "phone" => $motelroom->phone, "slug" => $motelroom->slug];
+		$arrmergeLatln[] = [
+			"lat" => $arrlatlng[0], 
+			"lng" => $arrlatlng[1], 
+			"title" => $motelroom->title, 
+			"address" => $motelroom->address, 
+			"phone" => $motelroom->phone, 
+			"slug" => $motelroom->slug
+		];
 		$js_array = json_encode($arrmergeLatln);
 		echo "var javascript_array = " . $js_array . ";\n";
 
