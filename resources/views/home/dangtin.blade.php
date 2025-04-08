@@ -110,7 +110,7 @@
             <div class="form-group">
               <label for="comment">Thêm hình ảnh:</label>
               <div class="file-loading">
-                <input id="file-5" type="file" class="file" name="hinhanh[]">
+                <input id="file-5" type="file" class="file" name="hinhanh[]" multiple data-overwrite-initial="false">
               </div>
             </div>
             
@@ -154,7 +154,12 @@
     theme: 'fa',
     language: 'vi',
     showUpload: false,
-    allowedFileExtensions: ['jpg', 'png', 'gif']
+    allowedFileExtensions: ['jpg', 'png', 'gif'],
+    maxFileCount: 10,
+    browseOnZoneClick: true,
+    showPreview: true,
+    theme: 'fa',
+    overwriteInitial: false,
   });
 </script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzlVX517mZWArHv4Dt3_JVG0aPmbSE5mE&callback=initialize&libraries=geometry,places" async defer></script>
@@ -327,7 +332,7 @@
 <script type="text/javascript" src="assets/js/selectize.js"></script>
 <script>
   $(function() {
-    $('select').selectize(options);
+    $('select').selectize();
   });
   $('#select-state').selectize({
     maxItems: null

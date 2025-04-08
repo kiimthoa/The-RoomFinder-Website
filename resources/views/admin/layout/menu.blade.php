@@ -8,7 +8,7 @@
 								<div class="media-body pt-5">
 									<span class="media-heading text-semibold">{{ Auth::user()->name }}</span>
 									<div class="text-size-mini text-muted">
-										<i class="icon-pin text-size-small"></i> TP Vinh
+										<i class="icon-pin text-size-small"></i> TP Cần Thơ
 									</div>
 								</div>
 

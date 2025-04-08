@@ -1,7 +1,7 @@
 <!-- Main navbar -->
 	<div class="navbar navbar-default header-highlight">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="/admin" style="color:white; font-size:17px"><strong>TÌM TRỌ THÀNH PHỐ VINH</strong></a>
+			<a class="navbar-brand" href="/admin" style="color:white; font-size:17px"><strong>TÌM TRỌ THÀNH PHỐ CẦN THƠ</strong></a>
 
 			<ul class="nav navbar-nav visible-xs-block">
 				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>

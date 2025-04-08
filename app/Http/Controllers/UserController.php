@@ -170,26 +170,26 @@ class UserController extends Controller
             $inputfile =  $request->file('hinhanh');
             foreach ($inputfile as $filehinh) {
                $namefile = "phongtro-".str_random(5)."-".$filehinh->getClientOriginalName();
-               while (file_exists('uploads/images'.$namefile)) {
+               while (file_exists('uploads/images/'.$namefile)) {
                  $namefile = "phongtro-".str_random(5)."-".$filehinh->getClientOriginalName();
                }
               $arr_images[] = $namefile;
               $filehinh->move('uploads/images',$namefile);
             }
-            $json_img =  json_encode($arr_images,JSON_FORCE_OBJECT);
+            $json_img =  json_encode($arr_images);
          }
          else {
             $arr_images[] = "no_img_room.png";
-            $json_img = json_encode($arr_images,JSON_FORCE_OBJECT);
+            $json_img = json_encode($arr_images);
          }
          /* tiện ích*/
-         $json_tienich = json_encode($request->tienich,JSON_FORCE_OBJECT);
+         $json_tienich = json_encode($request->tienich);
          /* ----*/ 
          /* get LatLng google map */ 
          $arrlatlng = array();
          $arrlatlng[] = $request->txtlat;
          $arrlatlng[] = $request->txtlng;
-         $json_latlng = json_encode($arrlatlng,JSON_FORCE_OBJECT);
+         $json_latlng = json_encode($arrlatlng);
 
          /* --- */
          /* New Phòng trọ */
@@ -250,26 +250,26 @@ class UserController extends Controller
             $inputfile =  $request->file('hinhanh');
             foreach ($inputfile as $filehinh) {
                $namefile = "phongtro-".str_random(5)."-".$filehinh->getClientOriginalName();
-               while (file_exists('uploads/images'.$namefile)) {
+               while (file_exists('uploads/images/'.$namefile)) {
                  $namefile = "phongtro-".str_random(5)."-".$filehinh->getClientOriginalName();
                }
               $arr_images[] = $namefile;
               $filehinh->move('uploads/images',$namefile);
             }
-            $json_img =  json_encode($arr_images,JSON_FORCE_OBJECT);
+            $json_img =  json_encode($arr_images);
          }
          else {
             // $arr_images[] = "no_img_room.png";
             $json_img = $room->images;
          }
          /* tiện ích*/
-         $json_tienich = json_encode($request->tienich,JSON_FORCE_OBJECT);
+         $json_tienich = json_encode($request->tienich);
          /* ----*/ 
          // get LatLng google map / 
          $arrlatlng = array();
          $arrlatlng[] = $request->txtlat;
          $arrlatlng[] = $request->txtlng;
-         $json_latlng = json_encode($arrlatlng,JSON_FORCE_OBJECT);
+         $json_latlng = json_encode($arrlatlng);
 
          // New Phòng trọ /
          $room->title = $request->txttitle;

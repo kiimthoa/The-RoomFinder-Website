@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Phòng Trọ Thành Vinh</title>
+	<title>Phòng Trọ Cần Thơ</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="assets/fileinput.css">
 	<script src="assets/pgwslider/pgwslider.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="assets/pgwslider/pgwslider.min.css">
+	
+
 	<!-- sortable.min.js is only needed if you wish to sort / rearrange files in initial preview. 
     This must be loaded before fileinput.min.js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.8/js/plugins/sortable.min.js" type="text/javascript"></script>
@@ -87,8 +89,8 @@
 							<img src="images/dd.png">
 						</a>
 						<div style="padding-top: 10px;">
-							<p>Đồng hành cùng sinh viên Đại học Vinh tìm kiếm phòng trọ</p>
-							<p>Sinh viên thực hiện: Hoàng Văn Công - 57K2 - CNTT</p>
+							<p>Đồng hành cùng sinh viên Cần Thơ tìm kiếm phòng trọ</p>
+							<p>Sinh viên thực hiện: Lương Thị Kim Thoa - K47</p>
 						</div>
 					</div>
 				</div>
@@ -98,6 +100,13 @@
 	</footer>
 
 	<script type="text/javascript" src="assets/toast/toastr.min.js"></script>
-</body>
 
-</html>
+</body>
+<script>
+$(document).ready(function() {
+    // Force initialize all dropdowns
+    $('.dropdown-toggle').dropdown();
+});
+</script>
+
+</html>	

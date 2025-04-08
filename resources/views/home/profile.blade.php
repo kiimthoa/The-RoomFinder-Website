@@ -71,7 +71,7 @@ function time_elapsed_string($datetime, $full = false) {
 							<tr>
 								<th>Tiêu đề</th>
 								<th>Danh mục</th>
-								<th>Gía phòng</th>
+								<th>Giá phòng</th>
 								<th>Lượt xem</th>
 								<th>Tình trạng</th>
 								<th> </th>

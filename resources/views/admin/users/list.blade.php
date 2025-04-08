@@ -94,7 +94,7 @@
 		</div>
 		<!-- Footer -->
 		<div class="footer text-muted">
-			&copy; 2021. <a href="#">Phòng trọ TP Vinh</a> by <a href="" target="_blank">Công Hoàng</a>
+			&copy; 2025. <a href="#">Phòng trọ Cần Thơ</a> by <a href="" target="_blank">Kim Thoa</a>
 		</div>
 		<!-- /footer -->
 	</div>

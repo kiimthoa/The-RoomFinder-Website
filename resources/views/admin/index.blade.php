@@ -23,7 +23,7 @@
 			<div class="col-12">
 				<div class="panel panel-flat">
 					<div class="panel-body">
-						Chào mừng bạn đến với Trang quản trị Phòng trọ thành phố Vinh
+						Chào mừng bạn đến với Trang quản trị Phòng trọ thành phố Cần Thơ
 					</div>
 				</div>
 			</div>
@@ -82,7 +82,7 @@
 		<!-- /quick stats boxes -->
 		<!-- Footer -->
 		<div class="footer text-muted">
-			&copy; 2019. <a href="#">Phòng trọ TP Vinh</a> by <a href="" target="_blank">Công Hoàng</a>
+			&copy; 2025. <a href="#">Phòng trọ TP Cần Thơ</a> by <a href="" target="_blank">Kim Thoa</a>
 		</div>
 		<!-- /footer -->
 	</div>

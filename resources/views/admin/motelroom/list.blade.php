@@ -111,7 +111,7 @@
 		</div>
 		<!-- Footer -->
 		<div class="footer text-muted">
-			&copy; 2019. <a href="#">Phòng trọ TP Vinh</a> by <a href="" target="_blank">Hoàng Văn Công</a>
+			&copy; 2025. <a href="#">Phòng trọ TP Cần Thơ</a> by <a href="" target="_blank">Lương Thị Kim Thoa</a>
 		</div>
 		<!-- /footer -->
 	</div>

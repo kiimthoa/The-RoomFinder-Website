@@ -23,7 +23,7 @@
 			<div class="col-12">
 				<div class="panel panel-flat">
 					<div class="panel-body">
-						Chào mừng bạn đến với Trang quản trị Phòng trọ đà nẵng
+						Chào mừng bạn đến với Trang quản trị Phòng trọ Cần Thơ
 					</div>
 				</div>
 			</div>
@@ -83,7 +83,7 @@
 		<!-- /quick stats boxes -->
 		<!-- Footer -->
 		<div class="footer text-muted">
-			&copy; 2021. <a href="#">Phòng trọ TP Vinh</a> by <a href="" target="_blank">Hoàng Văn Công</a>
+			&copy; 2025. <a href="#">Phòng trọ TP Cần Thơ</a> by <a href="" target="_blank">Lương Thị Kim Thoa</a>
 		</div>
 		<!-- /footer -->
 	</div>
