@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\User;
 use App\District;
 use App\Categories;
@@ -169,9 +170,9 @@ class UserController extends Controller
             $arr_images = array();
             $inputfile =  $request->file('hinhanh');
             foreach ($inputfile as $filehinh) {
-               $namefile = "phongtro-".str_random(5)."-".$filehinh->getClientOriginalName();
+               $namefile = "phongtro-".Str::random(5)."-".$filehinh->getClientOriginalName();
                while (file_exists('uploads/images/'.$namefile)) {
-                 $namefile = "phongtro-".str_random(5)."-".$filehinh->getClientOriginalName();
+                 $namefile = "phongtro-".Str::random(5)."-".$filehinh->getClientOriginalName();
                }
               $arr_images[] = $namefile;
               $filehinh->move('uploads/images',$namefile);
